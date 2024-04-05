@@ -1,0 +1,16 @@
+services:
+
+  seq:
+    container_name: seq
+    image: datalust/seq
+    restart: always
+    ports:
+      - "80:80"
+      - "5341:5341"
+    env_file:
+      - seq.env
+    volumes: 
+      - sed_data:/data
+
+volumes:
+  sed_data:
